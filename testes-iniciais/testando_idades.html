@@ -1,9 +1,33 @@
 <meta charset="UTF-8">
+<!--JS antigo-->
 <script>
     document.write("Minha idade é:   " + 18 + "<br>" )
     document.write("A soma das idades da minha família é: ")
     document.write((18 + 12 + 49 + 47) + "<br>")
     document.write("E a média das idades é " + ((18 + 12 + 49 + 47) / 4) + "<br>")
-    document.write("A diferença de idade minha e meu irmão é de:  " + (18 - 12) + "  anos")
+    document.write("A diferença de idade minha e meu irmão é de:  " + (18 - 12) + "  anos<br>")
+    document.write("quantas gerações se passaram do ano 0 :" + (2026 / 31) + "<br>")
 </script>
 
+<!--JS atulizado-->
+
+<script>
+    document.body.innerHTML += `
+    <p>Minha idade é: ${18}</p>
+    <p>A soma das idades da minha família é: ${18 + 12 + 49 + 47}</p>
+    <p>E a média das idades é: ${(18 + 12 + 49 + 47) / 4}</p> 
+    <p>A diferença de idade minha e meu irmão é de: ${19 - 13} anos</p>
+    <p>quantas gerações se passaram do ano 0 : ${2026 / 31}</p>
+   `;
+</script>
+
+<!--Organizando dados em variaveis teste-->
+
+<script>
+     const ano = 2026;
+     document.body.innerHTML += `
+       <p>Eu nasci em : ${ano - 19}</p>
+       <p>Théo nasceu em : ${ano - 13}</p>
+       <p>Glaucia nasceu em : ${ano - 49}</p>
+       `;
+</script>
