@@ -24,10 +24,25 @@
 <!--Organizando dados em variaveis teste-->
 
 <script>
-     const ano = 2026;
+     var ano = 2026;
      document.body.innerHTML += `
        <p>Eu nasci em : ${ano - 19}</p>
        <p>Théo nasceu em : ${ano - 13}</p>
        <p>Glaucia nasceu em : ${ano - 49}</p>
        `;
+</script>
+
+
+<script>
+    var ano = 2026
+    var eu = 18;
+    var Glaucia = 49;
+    var Theo = 12;
+    var total = eu + Glaucia + Theo;
+    var media = total / 3;
+
+    document.write("estamos no ano :  " + ano + "<br>");
+    document.write("A soma das idades é  " + total + "<br>");
+    document.write("A media de idade é :  " + Math.round(media));
+    
 </script>
