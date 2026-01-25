@@ -35,11 +35,13 @@
     }
 
     function calculaIMC(altura, peso){
-        var imc = peso / (altura * altura);
+        var imc = peso / (altura * altura).toFixed(2);
         return imc;
     }
     
     mostra("Meu imc é " + imc.toFixed(2));
     mostra("ainda estou " + (imc.toFixed(2) - 18.5)
             + " pontos acima do limite da magreza");
+    mostra("Estou " + (35 - imc.toFixed(2))
+            + "  pontos distante da obesidade severa.");
 </script>
