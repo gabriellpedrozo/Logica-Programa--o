@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<script>
+
+var idade = prompt("Quantos anos você tem?");
+
+function calculaDiasDeVida (idade) {
+    return idade * 365;
+}
+
+function calculaBatimentos (dias) { 
+    return dias * 24 * 60 * 80;
+}
+// chamada de função dentro da outra 
+
+var batimentos = calculaBatimentos (calculaDiasDeVida(idade));
+
+document.write("Você já viveu " + calculaDiasDeVida(idade) + " dias de vida" +
+"<br>");
+
+document.write("Seu coração já bateu " + batimentos + " vezes. Haja coração!"); 
+
+</script>

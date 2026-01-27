@@ -4,21 +4,32 @@
         document.write(frase);
         document.write("<br>");
     }
+
     var altura = 1.75;
+
     var peso = 76;
+
     var imc = peso / (altura * altura);
+
     mostra("meu IMC é:  " + imc.toFixed(2));
+
 </script>
 
 <script>
+
     function calculaIMC(altura, peso){
         var imc = peso / (altura * altura);
         return imc;
     }
+
     var pesoDaGal = 64;
+
     var alturaDaGal = 1.57;
+
     var imcDaGal = calculaIMC(alturaDaGal, pesoDaGal);
+
     mostra("O IMC da minha mãe é " + imcDaGal.toFixed(2));
+    
     mostra("Ela ainda está " + (imcDaGal.toFixed(2) - 18.5)
             + "  pontos acima do limite da magreza");
     
