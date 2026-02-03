@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+<script>
+    function mostra(frase){
+        document.write(frase + "<br>")
+    }
+
+    function sorteia(n){
+        return Math.round(Math.random() * n);
+    }
+    alert("Tenta adivinhar o número que estou pensando.");
+
+    var numeroPensado = sorteia(100);
+    var tentativas = 5;
+    var acertou = false
+
+    while (tentativas > 0 && acertou == false){
+
+        var chute = parseInt(prompt(
+            "Tente adivinhar o nnúmero (0 a 100)\nTentativas restantes: " + tentativas
+        ));
+
+        if(isNaN(chute)){
+            alert("Digite apenas números!")
+            continue; //nao perde tentativa
+        }
+
+        if (isNaN(chute == numeroPensado)){
+            mostra("Parabéns! Você acertou! O número era " + numeroPensado);
+        }
+
+        else if (chute > numeroPensado){
+            alert("Seu chute foi maior do que o pensado");
+        }
+
+        else{
+            alert("Seu chute foi menor do que o pensado.")
+        }
+
+        tentativas--;
+    }
+
+        if(acertou == false){
+            mostra("Acabaram as tentaivas! Tá sem sorte hein, o número era " + numeroPensado);
+        }
+</script>
