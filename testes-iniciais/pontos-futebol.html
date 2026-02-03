@@ -9,6 +9,10 @@
         pulaLinha();
     }
 
+     function calculaPontos(vitorias, empates){
+        return(vitorias * 3) + empates;
+    }
+
     var vitorias = parseInt(
                     prompt("Quantos jogos o CDC FC venceu?"));
     var empates = parseInt(
@@ -17,8 +21,8 @@
                                 prompt("Quantas vitórias o adversário tem?"))
     var empates_adversario = parseInt(
                     prompt("Quantos empates o adversário teve?"));
-    var pontos_adversario = ((vitorias_adversario * 3) + empates_adversario);
-    var pontos = (vitorias * 3) + empates;
+    var pontos_adversario = calculaPontos(vitorias_adversario, empates_adversario);
+    var pontos = calculaPontos(vitorias, empates);
 
     mostra("Nosso time tem " + pontos + " pontos!");
 
