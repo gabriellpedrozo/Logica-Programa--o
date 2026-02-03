@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <script>
     function pulaLinha(){
         document.write("<br>");
@@ -12,14 +13,24 @@
                     prompt("Quantos jogos o CDC FC venceu?"));
     var empates = parseInt(
                     prompt("Quantos jogos o CDC FC empatou?"));
+    var vitorias_adversario = parseInt(
+                                prompt("Quantas vitórias o adversário tem?"))
+    var empates_adversario = parseInt(
+                    prompt("Quantos empates o adversário teve?"));
+    var pontos_adversario = ((vitorias_adversario * 3) + empates_adversario);
     var pontos = (vitorias * 3) + empates;
 
     mostra("Nosso time tem " + pontos + " pontos!");
 
-    if(pontos > 28 ){
+    if(pontos > pontos_adversario ){
         mostra("Nosso time tá amassando");
     }
-    if(pontos < 28){
-        mostra("Tamo ferrado")
+    if(pontos < pontos_adversario){
+        mostra("Tamo ferrado");
     }
+    if(pontos == pontos_adversario){
+        mostra("tamo igual.");
+    }
+
+
 </script>
