@@ -3,10 +3,10 @@
         document.write(frase + "<br>");
     }
 
-    var tamanho = prompt("Digite o tamanho do quadro:");
+   
 
-    for(var linha = 0; linha < tamanho ; linha ++){
-        for(var coluna = 0; coluna < tamanho ; coluna ++){
+    for(var linha = 1; linha <= 100 ; linha ++){
+        for(var coluna = 1; coluna <= linha ; coluna ++){
             document.write("*")
         }
         document.write("<br>");

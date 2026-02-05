@@ -1,0 +1,20 @@
+<script>
+    var altura = 15; 
+
+    for (var linha = 0; linha < altura; linha++){
+
+
+        for (var i = 0; i < linha ; i++){
+        document.write("&nbsp;");
+    }
+       
+    document.write("*");
+
+
+        for (var j = 0 ; j < (altura * 2) - (linha * 2); j++ ){
+            document.write("&nbsp;")
+        }
+
+        document.write("*<br>");
+    }
+</script>
