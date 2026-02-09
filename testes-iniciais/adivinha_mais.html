@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>   
+<meta charset="UTF-8">
+<title>adivinhar</title>
+</head>
+<body>
+
+<input type="text" id="numero"/>
+<input type="button" id="adivinhar"
+        value="Compare com o meu segredo!" />
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+
+    var segredo = 8;
+    var caixaDoNumero = document.getElementById("numero");
+    
+    function botaoClicado(){
+        if(segredo === Number(caixaDoNumero.value)){
+            alert("Parabéns! Você acertou o número secreto");
+        }
+        else{
+            alert("Muito ruim pae, haha!");
+        }
+    }
+
+    var botaoAdivinhar = document.getElementById("adivinhar");
+    botaoAdivinhar.onclick = botaoClicado;
+
+});
+
+</script>
+
+</body>
+</html>
