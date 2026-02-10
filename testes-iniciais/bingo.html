@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>   
+<meta charset="UTF-8">
+<title>Loteria</title>
+</head>
+<body>
+
+
+        <script>
+            var sorteados = [];
+
+            //6 numeros sem repetir
+            while(sorteados.length < 6){
+
+                var numero = Math.floor(Math.random() * 60) + 1;
+
+                if(sorteados.indexOf(numero)== -1){
+                    sorteados.push(numero);
+                }
+            }
+
+            console.log("Numeros sorteados: ", sorteados );
+
+
+            //array dos numeros do usuario 
+            var escolhidos = [];
+
+            for(var i = 0; i < 6; i++){
+
+                var numeroUsuario = Number(prompt("Digite um numero de 1 a 60"));
+
+                escolhidos.push(numeroUsuario);
+            }
+
+            //comparar acertos
+
+        var acertos = 0;
+
+        for(var i = 0; i < escolhidos.length; i = i + 1){
+            
+            if(sorteados.indexOf(escolhidos[i]) != -1){
+
+                acertos++     
+            }
+        }
+            alert("Você acertou " + acertos + " numeros!");
+        </script>
+
+</body>
+</html>

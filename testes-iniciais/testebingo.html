@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Loteria</title>
+</head>
+<body>
+
+<h3>Digite 6 números de 1 a 60</h3>
+
+<input type="text" id="numero">
+<input type="button" id="verificar" value="Adicionar número">
+
+<p id="numerosEscolhidos"></p>
+<p id="resultado"></p>
+
+<script>
+
+//  sorteio
+var sorteados = [];
+
+while(sorteados.length < 6){
+    var numero = Math.floor(Math.random() * 60) + 1;
+
+    if(sorteados.indexOf(numero) == -1){
+        sorteados.push(numero);
+    }
+}
+
+console.log("Sorteados:", sorteados);
+
+
+//  numeros do usuario 
+var escolhidos = [];
+
+function adicionarNumero(){
+
+    var campo = document.getElementById("numero");
+    var numeroUsuario = Number(campo.value);
+
+    // validação
+    if(numeroUsuario < 1 || numeroUsuario > 60){
+        alert("Digite número entre 1 e 60");
+        return;
+    }
+
+    // evitar repetido
+    if(escolhidos.indexOf(numeroUsuario) != -1){
+        alert("Número repetido");
+        return;
+    }
+
+    escolhidos.push(numeroUsuario);
+
+    document.getElementById("numerosEscolhidos")
+        .innerHTML = "Seus números: " + escolhidos;
+
+    campo.value = "";
+    campo.focus();
+
+    // quando tiver 6 números
+    if(escolhidos.length == 6){
+        verificarResultado();
+    }
+}
+
+
+// comparar 
+function verificarResultado(){
+
+    var acertos = 0;
+
+    for(var i = 0; i < escolhidos.length; i++){
+        if(sorteados.indexOf(escolhidos[i]) != -1){
+            acertos++;
+        }
+    }
+//mensagens para o usuario
+    var mensagem = "";
+
+    if(acertos == 0){
+        mensagem = "sem sorte papae, muito ruim :("
+    }
+//TODOS
+    else if(acertos == 6){
+        mensagem = "QUE CAGADA, VAI JOGAR NA LOTERIA AGORA!!!!!!!! "
+    }
+
+    //pelo menos 1 
+
+    else{
+        mensagem = "Boa, ta no caminho. Tenta mais ae"
+    }
+
+    document.getElementById("resultado").innerHTML =
+        "Números sorteados: " + sorteados +
+        "<br>" + mensagem;
+}
+
+
+//  botão
+var botao = document.getElementById("verificar");
+botao.onclick = adicionarNumero;
+
+</script>
+
+</body>
+</html>

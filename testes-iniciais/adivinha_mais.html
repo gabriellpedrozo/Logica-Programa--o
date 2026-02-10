@@ -13,7 +13,13 @@
 <script>
     document.addEventListener("DOMContentLoaded", function(){
 
-    var segredo = 8;
+        function sorteia(n){
+        return Math.round(Math.random() * n);
+    }
+
+    
+
+    var segredo = sorteia(10);
     var caixaDoNumero = document.getElementById("numero");
     
     function botaoClicado(){
@@ -23,6 +29,7 @@
         else{
             alert("Muito ruim pae, haha!");
         }
+        caixaDoNumero.value = "";
     }
 
     var botaoAdivinhar = document.getElementById("adivinhar");
