@@ -1,1 +1,28 @@
-<canvas id=" tela" width="600" height="400"></canvas>
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+
+// 1) FUNDO VERMELHO (base da bandeira)
+c.fillStyle = "red";
+c.fillRect(0, 0, 600, 400);
+
+// 2) CRUZ BRANCA (mais grossa)
+c.fillStyle = "white";
+
+// faixa vertical branca
+c.fillRect(150, 0, 100, 400);
+
+// faixa horizontal branca
+c.fillRect(0, 150, 600, 100);
+
+// 3) CRUZ AZUL (por cima, mais fina)
+c.fillStyle = "blue";
+
+// faixa vertical azul (dentro da branca)
+c.fillRect(170, 0, 60, 400);
+
+// faixa horizontal azul (dentro da branca)
+c.fillRect(0, 170, 600, 60);
+</script>
